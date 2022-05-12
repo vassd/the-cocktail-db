@@ -23,6 +23,10 @@
         "linebreak-style": "off",
         "react/jsx-filename-extension": "off",
         "import/extensions": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "react/function-component-definition": "off",
+        "no-unused-vars": "off",
+        "no-prototype-builtins": "off"
     }
 }

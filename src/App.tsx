@@ -1,11 +1,9 @@
 import React from 'react';
-import './App.css';
+import { SearchView } from 'views';
 
 function App() {
   return (
-    <div className="App">
-      asd
-    </div>
+    <SearchView />
   );
 }
 
