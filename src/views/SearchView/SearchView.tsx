@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchForm } from 'components';
+import { SearchForm, SearchList } from 'components';
 
 export const SearchView: React.FC = () => {
   const [drink, setDrink] = useState('');
@@ -14,16 +14,20 @@ export const SearchView: React.FC = () => {
 
       if (data?.drinks) {
         setDrinks((prevState) => {
-          const newState: { [index: string]: Object } = Object.assign(prevState, {});
+          const newState: { [index: string]: Object[] } = Object.assign(prevState, {});
           newState[name] = data.drinks.slice(0, 5);
 
           return newState;
         });
       }
     }
+    setDrink(name);
   };
 
   return (
-    <section><SearchForm onSubmit={handleSubmit} /></section>
+    <section>
+      <SearchForm onSubmit={handleSubmit} />
+      <SearchList data={drinks[drink as keyof typeof drinks]} />
+    </section>
   );
 };
