@@ -1,0 +1,22 @@
+.search-list__item {
+    display: flex;
+}
+
+.search-list__item-figure {
+    flex: 0 0 50%;
+}
+
+.search-list__item-ingredients {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+}
+
+.search-list__item-figure {
+    max-width: 700px;
+
+    figcaption {
+        text-align: center;
+    }
+}

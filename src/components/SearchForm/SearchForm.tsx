@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './SearchForm.css';
+import './SearchForm.scss';
 
 interface SearchFormInterface {
     onSubmit(name: string | undefined): void

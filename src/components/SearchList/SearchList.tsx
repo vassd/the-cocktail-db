@@ -1,4 +1,6 @@
 import React from 'react';
+import './SearchList.scss';
+import { SearchListItem } from 'components';
 
 interface SearchListInterface {
     data: Object[]
@@ -25,6 +27,15 @@ export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
   }, []);
 
   return (
-    null
+    <ul className="search-list">
+      {preformatData(data)?.map((drink: { [key: string]: any }) => (
+        <SearchListItem
+          key={drink.name}
+          name={drink.name}
+          image={drink.image}
+          ingredients={drink.ingredients}
+        />
+      ))}
+    </ul>
   );
 };
