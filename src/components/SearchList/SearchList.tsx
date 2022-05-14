@@ -8,22 +8,23 @@ interface SearchListInterface {
 
 export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
   const getIngredients = (drink: { [key: string]: any }) => Object.keys(drink)
-    .filter((k) => k.includes('strIngredient') && drink[k])
-    .reduce((res: string[], i) => {
-      const measure = drink[`strMeasure${i.match(/\d/g)?.join('')}`];
-      res.push(`${measure || ''}${drink[i]}`);
+    .reduce((ingredients: string[], key) => {
+      if (key.includes('strIngredient') && drink[key]) {
+        const measure = drink[`strMeasure${key.match(/\d/g)?.join('')}`];
+        ingredients.push(`${measure || ''}${drink[key]}`);
+      }
 
-      return res;
+      return ingredients;
     }, []);
 
-  const preformatData = (drinks: Object[]) => drinks?.reduce((arr: Object[], cur: { [key: string]: any }) => {
-    arr.push({
-      name: cur.strDrink,
-      image: cur.strDrinkThumb,
-      ingredients: getIngredients(cur),
+  const preformatData = (drinks: Object[]) => drinks?.reduce((formattedDrinks: Object[], drink: { [key: string]: any }) => {
+    formattedDrinks.push({
+      name: drink.strDrink,
+      image: drink.strDrinkThumb,
+      ingredients: getIngredients(drink),
     });
 
-    return arr;
+    return formattedDrinks;
   }, []);
 
   return (
@@ -32,7 +33,7 @@ export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
         <SearchListItem
           key={drink.name}
           name={drink.name}
-          image={drink.image}
+          imageSrc={drink.image}
           ingredients={drink.ingredients}
         />
       ))}

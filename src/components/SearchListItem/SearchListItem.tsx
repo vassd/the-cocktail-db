@@ -3,11 +3,11 @@ import './SearchListItem.scss';
 
 interface SearchListItemInterface {
     name: string,
-    image: string,
+    imageSrc: string,
     ingredients: string[]
 }
 
-export const SearchListItem: React.FC<SearchListItemInterface> = ({ name, image, ingredients }) => {
+export const SearchListItem: React.FC<SearchListItemInterface> = ({ name, imageSrc, ingredients }) => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     e.currentTarget.src = `${process.env.PUBLIC_URL}/not-found.png`;
   };
@@ -15,7 +15,7 @@ export const SearchListItem: React.FC<SearchListItemInterface> = ({ name, image,
   return (
     <li className="search-list__item">
       <figure className="search-list__item-figure">
-        <img src={image} alt={name} onError={handleImageError} />
+        <img src={imageSrc} alt={name} onError={handleImageError} />
         <figcaption>{name}</figcaption>
       </figure>
       <ul className="search-list__item-ingredients">
