@@ -1,22 +1,22 @@
 .search-list__item {
-    display: flex;
-}
-
-.search-list__item-figure {
-    flex: 0 0 50%;
+  display: flex;
 }
 
 .search-list__item-ingredients {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 4vw;
+  justify-content: center;
+  padding: 0;
 }
 
 .search-list__item-figure {
-    max-width: 700px;
+  flex: 0 0 45%;
+  margin: 40px 6vw;
+  max-width: 700px;
 
-    figcaption {
-        text-align: center;
-    }
+  figcaption {
+    font-size: 5vw;
+    text-align: center;
+  }
 }

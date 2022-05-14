@@ -1,18 +1,23 @@
 .search-form {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .search-form__label {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 18px;
+  font-size: 5vw;
+  text-align: center;
 }
 
 .search-form__input {
-    margin: 12px 0 12px 0
+  margin: 12px 0 12px 0
+}
+
+button {
+  margin: auto;
+}
+
+.search-form, .search-form__label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
