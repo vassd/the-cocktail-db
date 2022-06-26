@@ -17,24 +17,14 @@ export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
       return ingredients;
     }, []);
 
-  const preformatData = (drinks: Object[]) => drinks?.reduce((formattedDrinks: Object[], drink: { [key: string]: any }) => {
-    formattedDrinks.push({
-      name: drink.strDrink,
-      image: drink.strDrinkThumb,
-      ingredients: getIngredients(drink),
-    });
-
-    return formattedDrinks;
-  }, []);
-
   return (
     <ul className="search-list">
-      {preformatData(data)?.map((drink: { [key: string]: any }) => (
+      {data?.map((drink: { [key: string]: any }) => (
         <SearchListItem
-          key={drink.name}
-          name={drink.name}
-          imageSrc={drink.image}
-          ingredients={drink.ingredients}
+          key={drink.strDrink}
+          name={drink.strDrink}
+          imageSrc={drink.strDrinkThumb}
+          ingredients={getIngredients(drink)}
         />
       ))}
     </ul>
