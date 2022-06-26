@@ -15,9 +15,15 @@ export const SearchForm: React.FC<SearchFormInterface> = ({ onSubmit }) => {
     onSubmit(inputRef.current?.value);
   };
 
+<<<<<<< HEAD
   return (
     <form className={styles["search-form"]}>
       <label className={styles["search-form__label"]} htmlFor="search">
+=======
+  return (/
+    <form className="search-form">
+      <label className="search-form__label" htmlFor="search">
+>>>>>>> b02a54c (feat: add bad changes)
         Find a cocktail by name
         <input
           className={styles["search-form__input"]}
