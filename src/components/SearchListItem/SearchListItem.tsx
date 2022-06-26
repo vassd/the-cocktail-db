@@ -1,14 +1,20 @@
-import React from 'react';
-import './SearchListItem.scss';
+import React from "react";
+import "./SearchListItem.scss";
 
 interface SearchListItemInterface {
-    name: string,
-    imageSrc: string,
-    ingredients: string[]
+  name: string;
+  imageSrc: string;
+  ingredients: string[];
 }
 
-export const SearchListItem: React.FC<SearchListItemInterface> = ({ name, imageSrc, ingredients }) => {
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+export const SearchListItem: React.FC<SearchListItemInterface> = ({
+  name,
+  imageSrc,
+  ingredients,
+}) => {
+  const handleImageError = (
+    e: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
     e.currentTarget.src = `${process.env.PUBLIC_URL}/not-found.png`;
   };
 

@@ -1,1 +1,1 @@
-export { SearchView } from './SearchView';
+export { SearchView } from "./SearchView";

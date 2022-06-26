@@ -1,17 +1,17 @@
-import React from 'react';
-import './SearchList.scss';
-import { SearchListItem } from 'components';
+import React from "react";
+import "./SearchList.scss";
+import { SearchListItem } from "components";
 
 interface SearchListInterface {
-    data: Object[]
+  data: Object[];
 }
 
 export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
-  const getIngredients = (drink: { [key: string]: any }) => Object.keys(drink)
-    .reduce((ingredients: string[], key) => {
-      if (key.includes('strIngredient') && drink[key]) {
-        const measure = drink[`strMeasure${key.match(/\d/g)?.join('')}`];
-        ingredients.push(`${measure || ''}${drink[key]}`);
+  const getIngredients = (drink: { [key: string]: any }) =>
+    Object.keys(drink).reduce((ingredients: string[], key) => {
+      if (key.includes("strIngredient") && drink[key]) {
+        const measure = drink[`strMeasure${key.match(/\d/g)?.join("")}`];
+        ingredients.push(`${measure || ""}${drink[key]}`);
       }
 
       return ingredients;
