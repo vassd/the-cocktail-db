@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchListItem.scss";
+import styles from "./SearchListItem.module.scss";
 
 interface SearchListItemInterface {
   name: string;
@@ -19,12 +19,12 @@ export const SearchListItem: React.FC<SearchListItemInterface> = ({
   };
 
   return (
-    <li className="search-list__item">
-      <figure className="search-list__item-figure">
+    <li className={styles["search-list__item"]}>
+      <figure className={styles["search-list__item-figure"]}>
         <img src={imageSrc} alt={name} onError={handleImageError} />
         <figcaption>{name}</figcaption>
       </figure>
-      <ul className="search-list__item-ingredients">
+      <ul className={styles["search-list__item-ingredients"]}>
         {ingredients.map((ingredient) => (
           <li key={`${name}_${ingredient}`}>{ingredient}</li>
         ))}

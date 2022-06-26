@@ -1,6 +1,11 @@
 .search-form {
   flex-wrap: wrap;
   justify-content: center;
+
+  button {
+    margin: auto;
+    font-size: 4vw;
+  }
 }
 
 .search-form__label {
@@ -11,11 +16,6 @@
 .search-form__input {
   margin: 12px 0 12px 0;
   font-size: 3vw;
-}
-
-button {
-  margin: auto;
-  font-size: 4vw;
 }
 
 .search-form, .search-form__label {

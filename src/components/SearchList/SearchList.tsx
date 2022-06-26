@@ -1,6 +1,6 @@
 import React from "react";
-import "./SearchList.scss";
 import { SearchListItem } from "components";
+import styles from "./SearchList.module.scss";
 
 interface SearchListInterface {
   data: Object[];
@@ -18,7 +18,7 @@ export const SearchList: React.FC<SearchListInterface> = ({ data }) => {
     }, []);
 
   return (
-    <ul className="search-list">
+    <ul className={styles["search-list"]}>
       {data?.map((drink: { [key: string]: any }) => (
         <SearchListItem
           key={drink.strDrink}

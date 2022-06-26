@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./SearchForm.scss";
+import styles from "./SearchForm.module.scss";
 
 interface SearchFormInterface {
   onSubmit(name: string | undefined): void;
@@ -16,11 +16,11 @@ export const SearchForm: React.FC<SearchFormInterface> = ({ onSubmit }) => {
   };
 
   return (
-    <form className="search-form">
-      <label className="search-form__label" htmlFor="search">
+    <form className={styles["search-form"]}>
+      <label className={styles["search-form__label"]} htmlFor="search">
         Find a cocktail by name
         <input
-          className="search-form__input"
+          className={styles["search-form__input"]}
           id="search"
           name="search"
           type="search"
