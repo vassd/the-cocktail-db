@@ -12,7 +12,7 @@ export const SearchForm: React.FC<SearchFormInterface> = ({ onSubmit }) => {
     e.stopPropagation();
     e.preventDefault();
 
-    onSubmit(inputRef.current?.value);
+    // onSubmit(inputRef.current?.value);
   };
 
   return (
